@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+vendor/
+.env
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+*.log
+logs/
+coverage/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Compiled files
+*.class
+*.pyc
+__pycache__/
+*.o
+*.exe
+
+# Package files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Local configuration
+config.local.js
+*.local.json
+.env.local
