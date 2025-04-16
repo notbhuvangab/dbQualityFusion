@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 
 const app = express();
 const port = 3001;
-const nimApiKey = process.env.NIM_API_KEY || 'YOUR_NIM_API_KEY';
+const nimApiKey = process.env.NIM_API_KEY ;
 
 app.use(cors());
 app.use(express.json());
@@ -18,8 +18,10 @@ async function getDatabaseSchema(dbConfig) {
 
   try {
     await connection.connect();
-
-    const [tables] = await connection.execute(
+    console.log("Connected to the database");
+    // Fetching the list of tables in the database
+    console.log("Fetching database schema...");
+    const [tables] = await connection.execute(  
       "SELECT table_name FROM information_schema.tables WHERE table_schema = ?",
       [dbConfig.database]
     );
