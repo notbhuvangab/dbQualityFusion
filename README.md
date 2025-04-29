@@ -48,6 +48,6 @@ dbQualityFusion is an automated data quality testing system that leverages an LL
 1.  Build the Docker image: `docker build -t dbqualityfusion .`
 2.  Run the Docker container: `docker run -p 3000:3000 -p 3001:3001 dbqualityfusion`
 
-## NVIDIA NIM API Key
+## OpenAI API Key
 
-To use the LLM functionality, you need to obtain an NVIDIA NIM API key and set the `NIM_API_KEY` environment variable in the `.env` file in the `backend` directory.
+To use the LLM functionality, you need to obtain an OpenAI API key and set the `NIM_API_KEY` environment variable in the `.env` file in the `backend` directory.
