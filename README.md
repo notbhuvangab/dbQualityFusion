@@ -51,7 +51,7 @@ dbQualityFusion is an AI-driven validation pipeline that automates data quality 
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/notbhuvangab/dbQualityFusion.git
    cd dbQualityFusion
    ```
 
@@ -117,95 +117,4 @@ dbQualityFusion is an AI-driven validation pipeline that automates data quality 
 3. **Access the application**:
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:3001
-   - Health check: http://localhost:3001/health
-
-### Production Mode
-
-1. **Build the frontend**:
-   ```bash
-   cd frontend
-   npm run build
-   ```
-
-2. **Start the backend**:
-   ```bash
-   cd backend
-   npm start
-   ```
-
-## API Endpoints
-
-### Core Endpoints
-
-- `GET /` - API information and features
-- `GET /health` - Health check and configuration status
-- `POST /schema` - Retrieve database schema
-- `POST /generate-tests` - Generate dbt tests for a specific table
-- `POST /generate-test-suite` - Generate comprehensive test suite for all tables
-- `POST /detect-anomalies` - Analyze SQL query for anomalies
-- `POST /run-tests` - Execute dbt tests (requires dbt installation)
-
-### Example Usage
-
-```bash
-# Health check
-curl http://localhost:3001/health
-
-# Generate test suite
-curl -X POST http://localhost:3001/generate-test-suite \
-  -H "Content-Type: application/json" \
-  -d '{
-    "host": "localhost",
-    "user": "root",
-    "password": "password",
-    "database": "testdb"
-  }'
-
-# Detect SQL anomalies
-curl -X POST http://localhost:3001/detect-anomalies \
-  -H "Content-Type: application/json" \
-  -d '{
-    "sqlQuery": "SELECT * FROM users WHERE id = 1",
-    "tableSchema": {...}
-  }'
-```
-
-## Features in Detail
-
-### 1. AI-Powered Test Generation
-
-The system uses OpenAI GPT-4 to generate comprehensive dbt tests based on:
-- Database schema analysis
-- Column types and constraints
-- Sample data patterns
-- Data quality best practices
-
-Generated tests include:
-- Unique constraints
-- Not null validations
-- Accepted values checks
-- Relationship validations
-- Custom SQL quality checks
-- Data freshness tests
-- Volume and statistical tests
-
-### 2. SQL Anomaly Detection
-
-Advanced LLM-based analysis identifies:
-- Syntax errors and runtime issues
-- Logic problems and incorrect results
-- Performance concerns (missing indexes, inefficient joins)
-- Data quality issues (null handling, type mismatches)
-- Security vulnerabilities (SQL injection risks)
-- Best practice violations
-
-### 3. Interactive Dashboard
-
-The React dashboard provides:
-- Database connection management
-- Schema visualization with expandable tables
-- Test generation and execution
-- Anomaly detection interface
-- Quality metrics visualization
-- Real-time status updates
 
